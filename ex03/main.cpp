@@ -5,11 +5,10 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 #include <iostream>
-#include <cstdlib> // For srand
-#include <ctime>   // For time
+#include <cstdlib>
+#include <ctime>
 
 int main() {
-    // Seed random number generator once in main
     srand(time(0));
 
     Intern someRandomIntern;
@@ -17,12 +16,10 @@ int main() {
 
     std::cout << "--- Testing Intern Form Creation --- " << std::endl;
 
-    // Test creating a valid form: Robotomy Request
     std::cout << "\nAttempting to create 'robotomy request' for 'Bender':" << std::endl;
     formPtr = someRandomIntern.makeForm("robotomy request", "Bender");
     if (formPtr) {
         std::cout << "Successfully created form: " << *formPtr << std::endl;
-        // Example of using the created form
         try {
             Bureaucrat high("HighExec", 40);
             high.signForm(*formPtr);
