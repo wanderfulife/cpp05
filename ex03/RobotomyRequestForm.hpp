@@ -3,14 +3,14 @@
 
 # include "AForm.hpp"
 # include <string>
-# include <cstdlib> // For rand() and srand()
-# include <ctime>   // For time()
+# include <cstdlib>
+# include <ctime>
 
 class RobotomyRequestForm : public AForm {
 
 private:
     const std::string _target;
-    RobotomyRequestForm(); // Default constructor private
+    RobotomyRequestForm();
 
 public:
     RobotomyRequestForm(const std::string& target);
@@ -20,7 +20,7 @@ public:
 
     std::string getTarget() const;
 
-    virtual void execute(Bureaucrat const & executor) const; // Override
+    virtual void execute(Bureaucrat const & executor) const;
 
 };
 

@@ -26,7 +26,6 @@ AForm::AForm(const AForm& other) :
 
 AForm& AForm::operator=(const AForm& other) {
     if (this != &other) {
-        // name, gradeToSign, gradeToExecute are const
         this->_isSigned = other._isSigned;
     }
     return *this;
@@ -57,7 +56,6 @@ void AForm::beSigned(const Bureaucrat& b) {
     this->_isSigned = true;
 }
 
-// Base class execute checks preconditions before calling derived executeAction
 void AForm::execute(Bureaucrat const & executor) const {
     if (!this->_isSigned) {
         throw AForm::FormNotSignedException();
@@ -65,7 +63,6 @@ void AForm::execute(Bureaucrat const & executor) const {
     if (executor.getGrade() > this->_gradeToExecute) {
         throw AForm::GradeTooLowException();
     }
-    // No need to call a derived executeAction if we implement it in the concrete class
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {

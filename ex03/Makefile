@@ -1,6 +1,5 @@
 NAME = internFucks
 
-# Source files
 SRCS = main.cpp \
        Bureaucrat.cpp \
        AForm.cpp \
@@ -11,11 +10,9 @@ SRCS = main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-# Compiler and flags
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I.
 
-# Header files (for dependency tracking)
 HDRS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 all: $(NAME)
@@ -23,7 +20,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-# Update dependency rules for new files and dependencies
 main.o: main.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
 

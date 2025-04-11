@@ -4,9 +4,9 @@
 # include <string>
 # include <iostream>
 # include <stdexcept>
-# include "Bureaucrat.hpp" // Include Bureaucrat header
+# include "Bureaucrat.hpp"
 
-class Bureaucrat; // Forward declaration
+class Bureaucrat;
 
 class Form {
 

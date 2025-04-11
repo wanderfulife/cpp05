@@ -30,12 +30,11 @@ int main() {
         } catch (const std::exception& e) {
             std::cerr << "Exception using created form: " << e.what() << std::endl;
         }
-        delete formPtr; // Clean up allocated memory
+        delete formPtr;
     } else {
         std::cerr << "Failed to create 'robotomy request' form." << std::endl;
     }
 
-    // Test creating another valid form: Presidential Pardon
     std::cout << "\nAttempting to create 'presidential pardon' for 'Marvin':" << std::endl;
     formPtr = someRandomIntern.makeForm("presidential pardon", "Marvin");
     if (formPtr) {
@@ -45,7 +44,6 @@ int main() {
         std::cerr << "Failed to create 'presidential pardon' form." << std::endl;
     }
 
-    // Test creating a third valid form: Shrubbery Creation
     std::cout << "\nAttempting to create 'shrubbery creation' for 'garden':" << std::endl;
     formPtr = someRandomIntern.makeForm("shrubbery creation", "garden");
     if (formPtr) {
@@ -55,7 +53,6 @@ int main() {
         std::cerr << "Failed to create 'shrubbery creation' form." << std::endl;
     }
 
-    // Test creating an invalid form
     std::cout << "\nAttempting to create 'invalid form type' for 'target':" << std::endl;
     formPtr = someRandomIntern.makeForm("invalid form type", "target");
     if (formPtr) {

@@ -46,7 +46,7 @@ int main() {
         std::cout << f1 << std::endl;
 
         std::cout << "\nSigner attempts to sign f1 again (already signed):" << std::endl;
-        signer.signForm(f1); // Should just print signed message, no exception
+        signer.signForm(f1);
         std::cout << f1 << std::endl;
 
     } catch (const std::exception& e) {
@@ -59,7 +59,7 @@ int main() {
         Form f("TestForm", 50, 50);
         std::cout << b << std::endl;
         std::cout << f << std::endl;
-        b.signForm(f); // This should fail and print the couldn't sign message
+        b.signForm(f);
         std::cout << f << std::endl;
     } catch (const std::exception& e) {
          std::cerr << "Caught exception: " << e.what() << std::endl;

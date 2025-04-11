@@ -4,11 +4,11 @@
 # include <string>
 # include <iostream>
 # include <stdexcept>
-# include "Bureaucrat.hpp" // Include Bureaucrat header
+# include "Bureaucrat.hpp"
 
-class Bureaucrat; // Forward declaration
+class Bureaucrat;
 
-class AForm { // Renamed from Form
+class AForm {
 
 private:
     const std::string   _name;
@@ -21,7 +21,7 @@ public:
     AForm(const std::string& name, int gradeToSign, int gradeToExecute);
     AForm(const AForm& other);
     AForm& operator=(const AForm& other);
-    virtual ~AForm(); // Virtual destructor
+    virtual ~AForm();
 
     std::string getName() const;
     bool isSigned() const;
@@ -30,7 +30,6 @@ public:
 
     void beSigned(const Bureaucrat& b);
 
-    // Pure virtual function for execution
     virtual void execute(Bureaucrat const & executor) const = 0;
 
     class GradeTooHighException : public std::exception {

@@ -2,7 +2,7 @@
 # define INTERN_HPP
 
 # include <string>
-# include <stdexcept> // Include for std::exception
+# include <stdexcept>
 # include "AForm.hpp"
 # include "ShrubberyCreationForm.hpp"
 # include "RobotomyRequestForm.hpp"
@@ -18,7 +18,6 @@ public:
 
     AForm* makeForm(const std::string& formName, const std::string& target);
 
-    // Optional: Custom exception for unknown form type
     class UnknownFormException : public std::exception {
     public:
         virtual const char* what() const throw();

@@ -3,13 +3,13 @@
 
 # include "AForm.hpp"
 # include <string>
-# include <fstream> // For file operations
+# include <fstream>
 
 class ShrubberyCreationForm : public AForm {
 
 private:
     const std::string _target;
-    ShrubberyCreationForm(); // Default constructor private
+    ShrubberyCreationForm();
 
 public:
     ShrubberyCreationForm(const std::string& target);
@@ -19,7 +19,7 @@ public:
 
     std::string getTarget() const;
 
-    virtual void execute(Bureaucrat const & executor) const; // Override
+    virtual void execute(Bureaucrat const & executor) const;
 
 };
 

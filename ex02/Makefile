@@ -1,6 +1,5 @@
 NAME = abstractForms
 
-# Source files
 SRCS = main.cpp \
        Bureaucrat.cpp \
        AForm.cpp \
@@ -10,11 +9,9 @@ SRCS = main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-# Compiler and flags
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I.
 
-# Header files (for dependency tracking, adjust if needed)
 HDRS = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 all: $(NAME)
@@ -22,7 +19,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-# More specific dependency rules
 main.o: main.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
 

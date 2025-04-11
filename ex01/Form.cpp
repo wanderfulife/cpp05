@@ -26,7 +26,6 @@ Form::Form(const Form& other) :
 
 Form& Form::operator=(const Form& other) {
     if (this != &other) {
-        // name, gradeToSign, gradeToExecute are const
         this->_isSigned = other._isSigned;
     }
     return *this;

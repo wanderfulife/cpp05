@@ -8,7 +8,7 @@ class PresidentialPardonForm : public AForm {
 
 private:
     const std::string _target;
-    PresidentialPardonForm(); // Default constructor private
+    PresidentialPardonForm();
 
 public:
     PresidentialPardonForm(const std::string& target);
@@ -18,7 +18,7 @@ public:
 
     std::string getTarget() const;
 
-    virtual void execute(Bureaucrat const & executor) const; // Override
+    virtual void execute(Bureaucrat const & executor) const;
 
 };
 
